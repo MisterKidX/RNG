@@ -12,6 +12,7 @@ namespace RNG.Base
     public interface IDeterministicRandom : IRandom
     {
         int Seed { get; }
+        int Count { get; }
     }
 
     public abstract class RandomGenerator : IRandom
@@ -25,5 +26,8 @@ namespace RNG.Base
     {
         protected int _seed;
         public int Seed => _seed;
+
+        protected int _count;
+        public int Count => _count;
     }
 }

@@ -8,8 +8,11 @@ namespace RNG.RandomEngines
         private double _value;
         public double Value => _value;
 
-        private int _seed = 0;
+        private readonly int _seed = 0;
         public int Seed => _seed;
+
+        private uint _count;
+        public int Count => (int)_count;
 
         private Random _rand;
 
@@ -27,6 +30,7 @@ namespace RNG.RandomEngines
 
         public double Next()
         {
+            _count++;
             _value = _rand.NextDouble();
             return _value;
         }
