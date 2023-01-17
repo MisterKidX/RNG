@@ -1,32 +1,34 @@
 ﻿using RNG.Base;
+using System;
 
-namespace RNG.RandomEngines;
-
-public class SystemRandom : System.Random, IDeterministicRandom
+namespace RNG.RandomEngines
 {
-    private double _value;
-    public double Value => _value;
-
-    private int _seed = 0;
-    public int Seed => _seed;
-
-    private Random _rand;
-
-    public SystemRandom()
+    public class SystemRandom : IDeterministicRandom
     {
-        _seed = (int)DateTime.Now.Ticks;
-        _rand = new Random(_seed);
-    }
+        private double _value;
+        public double Value => _value;
 
-    public SystemRandom(int seed)
-    {
-        _seed = seed;
-        _rand = new Random(seed);
-    }
+        private int _seed = 0;
+        public int Seed => _seed;
 
-    public double Next()
-    {
-        _value = _rand.NextDouble();
-        return _value;
+        private Random _rand;
+
+        public SystemRandom()
+        {
+            _seed = (int)DateTime.Now.Ticks;
+            _rand = new Random(_seed);
+        }
+
+        public SystemRandom(int seed)
+        {
+            _seed = seed;
+            _rand = new Random(seed);
+        }
+
+        public double Next()
+        {
+            _value = _rand.NextDouble();
+            return _value;
+        }
     }
 }
