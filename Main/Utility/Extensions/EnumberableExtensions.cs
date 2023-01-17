@@ -1,19 +1,12 @@
 ﻿using RNG.Base;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace RNG.Utility.Extensions
 {
     public static class EnumerablesExtensions
     {
-        //public static T ChooseRandom<T>(this IEnumerable<T> enumerable, IRandom rng)
-        //{
-        //    if (enumerable == null || !enumerable.GetEnumerator().MoveNext())
-        //        return default(T);
-
-        //    var count = enumerable.Count();
-
-        //}
-
         public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> enumerable, IRandom rng)
         {
             var sequence = enumerable.ToArray();

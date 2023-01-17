@@ -1,15 +1,16 @@
 ﻿using RNG.Base;
 
-namespace RNG.RandomCollections;
-
-public abstract class RandomCollection : IRandomCollection
+namespace RNG.RandomCollections
 {
-    protected IRandom _random;
+    public abstract class RandomCollection : IRandomCollection
+    {
+        protected IRandom _random;
 
-    IRandom IRandomCollection._random => _random;
-}
+        IRandom IRandomCollection._random => _random;
+    }
 
-public interface IRandomCollection
-{
-    protected IRandom _random { get; }
+    public interface IRandomCollection
+    {
+        protected IRandom _random { get; }
+    }
 }
