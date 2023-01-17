@@ -5,6 +5,7 @@ namespace RNG_TestSuit
         [SetUp]
         public void Setup()
         {
+
         }
 
         [Test]
